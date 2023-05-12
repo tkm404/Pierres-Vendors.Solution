@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using PierresVendors.Models;
@@ -45,7 +46,8 @@ namespace PierresVendors.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderTitle, orderDesc, orderPrice);
-      newOrder.PurchaseDate(year, month, day);
+      DateTime dateUpdate = newOrder.PurchaseDate(year, month, day);
+      newOrder.Date = dateUpdate.ToString();
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
