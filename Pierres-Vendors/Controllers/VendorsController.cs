@@ -39,6 +39,19 @@ namespace PierresVendors.Controllers
       return View(model);
     }
 
-    [HttpPost]
+//takes form names from Orders/New view and uses to make new Vendor/Orders Dictionary... hopefully.
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string orderTitle, string orderDesc, int orderPrice, int year, int month, int day)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderTitle, orderDesc, orderPrice);
+      newOrder.PurchaseDate(year, month, day);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
+    }
   }
 }

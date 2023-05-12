@@ -1,3 +1,31 @@
 @{
   Layout = "_Layout";
 }
+
+<h1>Add new Order for @Model.Name</h1>
+
+@* goes to Vendor Controller -> Vendor Create; Show *@
+<form action="/vendors/@Model.Id/orders" method="post">
+  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+  <label for="orderTitle">Order Title:</label>
+  <input id="orderTitle" name="orderTitle" type="text">
+
+  <label for="orderDesc">Order Description:</label>
+  <input id="orderDesc" name="orderDesc" type="text">
+
+  <label for="orderPrice">Order Price (in whole numbers, please):</label>
+  <input id="orderPrice" name="orderPrice" type="number" min="0">
+
+  <label for="orderDate">Date of Order:</label>
+  <label for="year">Year (yyyy):</label>
+  <input id="year" name="year" type="number">
+
+  <label for="month">Month (mm):</label>
+  <input id="month" name="month" type="number">
+
+  <label for="day">Day (dd):</label>
+  <input id="day" name="day" type="number">
+
+  <button type="submit"> Add Order </button>
+
+</form>
