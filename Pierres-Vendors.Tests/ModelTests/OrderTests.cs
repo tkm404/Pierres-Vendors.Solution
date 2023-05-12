@@ -35,7 +35,8 @@ namespace PierresVendors.Tests
     {
       int price = 4;
       Order newOrder = new Order("buns", "bread product", price);
-      Assert.AreEqual(price, newOrder.Price);
+      string dollars = "$4";
+      Assert.AreEqual(dollars, newOrder.Price);
     }
     [TestMethod]
     public void PurchaseDate_SetsDateOfOrder_DateTime()

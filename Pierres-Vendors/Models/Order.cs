@@ -6,14 +6,14 @@ namespace PierresVendors.Models
   {
     public string Title { get; set; }
     public string Description { get; set; }
-    public int Price { get; set; }
+    public string Price { get; set; }
     public string Date { get; set; }
     private static DateTime _timeline { get; set; } = new DateTime();
     public Order(string title, string desc, int price)
     {
       Title = title;
       Description = desc;
-      Price = price;
+      Price = $"${price}";
       Date = _timeline.ToString();
     }
 
