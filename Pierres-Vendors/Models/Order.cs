@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace PierresVendors.Models
 {
@@ -9,6 +10,7 @@ namespace PierresVendors.Models
     public string Price { get; set; }
     public string Date { get; set; }
     private static DateTime _timeline { get; set; } = new DateTime();
+    private static List<Order> _instances = new List<Order> { };
     public Order(string title, string desc, int price)
     {
       Title = title;
@@ -21,6 +23,20 @@ namespace PierresVendors.Models
     {
       _timeline = new DateTime(year, month, day);
       return _timeline;
+    }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+    public static Order Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
 
   }
