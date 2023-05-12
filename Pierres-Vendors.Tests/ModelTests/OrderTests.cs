@@ -44,8 +44,8 @@ namespace PierresVendors.Tests
       DateTime theDate = new DateTime(2023, 5, 12);
       Order newOrder = new Order("buns", "bread product", 4);
       string expected = theDate.ToString();
-      string result = newOrder.PurchaseDate();
-      Assert.AreEqual(expected, result);
+      newOrder.PurchaseDate(2023, 5, 12);
+      Assert.AreEqual(expected, newOrder.Date);
     }
   }
 }
