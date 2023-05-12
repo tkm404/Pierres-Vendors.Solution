@@ -30,5 +30,13 @@ namespace PierresVendors.Tests
       Order newOrder = new Order("buns", desc, 4, "05/12/2023");
       Assert.AreEqual(desc, newOrder.Description);
     }
+
+    [TestMethod]
+    public void SetPrice_SetsPriceOfOrder_Order()
+    {
+      int price = 4;
+      Order newOrder = new Order("buns", "bread product", price, "05/12/2023");
+      Assert.AreEqual(price, newOrder.Price);
+    }
   }
 }
