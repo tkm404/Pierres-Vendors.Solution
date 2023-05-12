@@ -41,11 +41,12 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void PurchaseDate_SetsDateOfOrder_DateTime()
     {
-      DateTime theDate = new DateTime(2023, 5, 12);
+      DateTime expectedDate = new DateTime(2023, 5, 12);
       Order newOrder = new Order("buns", "bread product", 4);
-      string expected = theDate.ToString();
-      newOrder.PurchaseDate(2023, 5, 12);
-      Assert.AreEqual(expected, newOrder.Date);
+      DateTime actualDate = newOrder.PurchaseDate(2023, 5, 12);
+      string expected = expectedDate.ToString();
+      string actual = actualDate.ToString();
+      Assert.AreEqual(expected, actual);
     }
   }
 }
