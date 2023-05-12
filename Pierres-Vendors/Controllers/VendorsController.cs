@@ -38,5 +38,7 @@ namespace PierresVendors.Controllers
       model.Add("orders", vendorOrders);
       return View(model);
     }
+
+    [HttpPost]
   }
 }
