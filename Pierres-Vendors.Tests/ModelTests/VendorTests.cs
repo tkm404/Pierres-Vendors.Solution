@@ -46,6 +46,7 @@ namespace PierresVendors.Tests
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
+
     [TestMethod]
     public void GetAll_ReturnsAllVendorObjects_Vendor()
     {
@@ -56,6 +57,17 @@ namespace PierresVendors.Tests
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string name1 = "Test1";
+      string name2 = "Test2";
+      Vendor newVendor1 = new Vendor(name1, "testdesc1");
+      Vendor newVendor2 = new Vendor(name2, "testdesc2");
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor2, result);
     }
   }
 }
