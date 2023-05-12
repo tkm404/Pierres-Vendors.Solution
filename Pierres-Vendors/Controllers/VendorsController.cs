@@ -20,6 +20,14 @@ namespace PierresVendors.Controllers
       return View();
     }
 
+// takes form names from Vendors/New view and uses to make new Vendor
+    [HttpPost("/vendors")]
+    public ActionResult Create(string vendorName, string vendorDesc)
+    {
+      Vendor newVendor = new Vendor(vendorName, vendorDesc);
+      return RedirectToAction("Index");
+    }
+
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
