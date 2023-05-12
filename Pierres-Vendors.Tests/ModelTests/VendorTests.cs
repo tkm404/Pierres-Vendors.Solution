@@ -19,6 +19,7 @@ namespace PierresVendors.Tests
       Vendor newVendor = new Vendor("test name", "test desc");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
@@ -27,6 +28,7 @@ namespace PierresVendors.Tests
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
     }
+
     [TestMethod]
     public void GetDesc_ReturnsDescription_String()
     {
@@ -34,6 +36,15 @@ namespace PierresVendors.Tests
       Vendor newVendor = new Vendor("Suzie's Deli", desc);
       string result = newVendor.Description;
       Assert.AreEqual(desc, result);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Test Vendor";
+      Vendor newVendor = new Vendor(name, "test desc");
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
     }
   }
 }
