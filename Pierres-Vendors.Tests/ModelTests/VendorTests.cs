@@ -27,5 +27,13 @@ namespace PierresVendors.Tests
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
     }
+    [TestMethod]
+    public void GetDesc_ReturnsDescription_String()
+    {
+      string desc = "Restaurant";
+      Vendor newVendor = new Vendor("Suzie's Deli", desc);
+      string result = newVendor.Description;
+      Assert.AreEqual(desc, result);
+    }
   }
 }
