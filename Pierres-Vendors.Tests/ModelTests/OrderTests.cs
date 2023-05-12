@@ -14,5 +14,14 @@ namespace PierresVendors.Tests
       Order newOrder = new Order("buns", "bread product", 4, "05/12/2023");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
+    [TestMethod]
+    public void SetTitle_SetsTitleOfOrder_Order()
+    {
+      string title = "buns";
+      Order newOrder = new Order(title, "bread product", 4, "05/12/2023");
+      Assert.AreEqual(title, newOrder.Title);
+    }
+    
   }
 }
