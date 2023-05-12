@@ -11,7 +11,7 @@ namespace PierresVendors.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("buns", "bread product", 4, "05/12/2023");
+      Order newOrder = new Order("buns", "bread product", 4);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -19,7 +19,7 @@ namespace PierresVendors.Tests
     public void SetTitle_SetsTitleOfOrder_Order()
     {
       string title = "buns";
-      Order newOrder = new Order(title, "bread product", 4, "05/12/2023");
+      Order newOrder = new Order(title, "bread product", 4);
       Assert.AreEqual(title, newOrder.Title);
     }
     
@@ -27,7 +27,7 @@ namespace PierresVendors.Tests
     public void SetDescription_SetsDescriptionOfOrder_Order()
     {
       string desc = "bread product";
-      Order newOrder = new Order("buns", desc, 4, "05/12/2023");
+      Order newOrder = new Order("buns", desc, 4);
       Assert.AreEqual(desc, newOrder.Description);
     }
 
@@ -35,7 +35,7 @@ namespace PierresVendors.Tests
     public void SetPrice_SetsPriceOfOrder_Order()
     {
       int price = 4;
-      Order newOrder = new Order("buns", "bread product", price, "05/12/2023");
+      Order newOrder = new Order("buns", "bread product", price);
       Assert.AreEqual(price, newOrder.Price);
     }
   }
