@@ -9,6 +9,7 @@ namespace PierresVendors.Models
     public string Price { get; set; }
     public string Date { get; set; }
     private static DateTime _timeline { get; set; } = new DateTime();
+    
     public Order(string title, string desc, int price)
     {
       Title = title;
