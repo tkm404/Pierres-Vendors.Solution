@@ -14,6 +14,7 @@ namespace PierresVendors.Models
     {
       Name = vendorName;
       Description = vendorDesc;
+      _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Order>{};
     }
