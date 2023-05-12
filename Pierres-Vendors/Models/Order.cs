@@ -17,6 +17,7 @@ namespace PierresVendors.Models
       Description = desc;
       Price = $"${price}";
       Date = _timeline.ToString();
+      _instances.Add(this);
     }
 
     public DateTime PurchaseDate(int year, int month, int day)
