@@ -9,6 +9,7 @@ namespace PierresVendors.Models
     public string Description { get; set; }
     public string Price { get; set; }
     public string Date { get; set; }
+    public int Id { get; }
     private static DateTime _timeline { get; set; } = new DateTime();
     private static List<Order> _instances = new List<Order> { };
     public Order(string title, string desc, int price)
@@ -18,6 +19,7 @@ namespace PierresVendors.Models
       Price = $"${price}";
       Date = _timeline.ToString();
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public DateTime PurchaseDate(int year, int month, int day)
