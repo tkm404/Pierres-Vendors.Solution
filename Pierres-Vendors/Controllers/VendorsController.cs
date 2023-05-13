@@ -39,7 +39,7 @@ namespace PierresVendors.Controllers
       return View(model);
     }
 
-//takes form names from Orders/New view and uses to make new Vendor/Orders Dictionary... hopefully.
+//takes form names from Orders/New view and uses to make new Vendor/Orders Dictionary.
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDesc, int orderPrice, int year, int month, int day)
     {
