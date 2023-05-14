@@ -21,6 +21,10 @@ namespace PierresVendors.Models
       _instances.Add(this);
       Id = _instances.Count;
     }
+    public Order()
+    {
+      Date = _timeline.ToString();
+    }
 
     public DateTime PurchaseDate(int year, int month, int day)
     {
