@@ -20,7 +20,6 @@ namespace PierresVendors.Controllers
       return View();
     }
 
-// takes form names from Vendors/New view and uses to make new Vendor
     [HttpPost("/vendors")]
     public ActionResult Create(string vendorName, string vendorDesc)
     {
@@ -39,7 +38,6 @@ namespace PierresVendors.Controllers
       return View(model);
     }
 
-//takes form names from Orders/New view and uses to make new Vendor/Orders Dictionary.
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDesc, int orderPrice, int year, int month, int day)
     {
@@ -50,7 +48,7 @@ namespace PierresVendors.Controllers
       Order newOrder = new Order(orderTitle, orderDesc, orderPrice);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
-      vendorOrders[vendorOrders.Count -1].PurchaseDate(year, month, day);
+      vendorOrders[vendorOrders.Count - 1].PurchaseDate(year, month, day);
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);
