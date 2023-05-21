@@ -29,7 +29,10 @@ INSTRUCTIONS:
 8. Close the program at any time by typing "ctrl + c" into your terminal.
 
 ## Known Bugs:
-I had to do a bit of a dubious workaround to get the Date and Time to update properly. This involved making a new overloaded Order object that doesn't get added to the Orders list(s), but does let me run the PurchaseDate() function on it. I think this has something to do with the timing window of when an Order object is instantiated, and the scope of the PurchaseDate() function. I might have played it a little fast and loose with public/private/static. I'm not sure if I'm inadvertently making a bunch of "load-bearing potatoes." Otherwise, everything seems to be working fine.
+**update**
+Fixed issue below by using the HTML date entry method. Was giving myself more work than necessary by making a DateTime and then re-converting it back into a string.
+
+<!-- I had to do a bit of a dubious workaround to get the Date and Time to update properly. This involved making a new overloaded Order object that doesn't get added to the Orders list(s), but does let me run the PurchaseDate() function on it. I think this has something to do with the timing window of when an Order object is instantiated, and the scope of the PurchaseDate() function. I might have played it a little fast and loose with public/private/static. I'm not sure if I'm inadvertently making a bunch of "load-bearing potatoes." Otherwise, everything seems to be working fine. -->
 
 ## License:
 (C) 2023 Thomas McDowell ; MIT
