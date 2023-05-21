@@ -77,7 +77,7 @@ namespace PierresVendors.Tests
       string title2 = "Test2";
       Order newOrder1 = new Order(title1, "bread product", 4, "some year");
       Order newOrder2 = new Order(title2, "pastry", 3, "another year");
-      Vendor result = Vendor.Find(2);
+      Order result = Order.Find(2);
       Assert.AreEqual(newOrder2, result);
     }
   }
