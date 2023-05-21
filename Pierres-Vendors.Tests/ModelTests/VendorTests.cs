@@ -76,7 +76,8 @@ namespace PierresVendors.Tests
       string title = "bread";
       string desc = "bread product";
       int price = 4;
-      Order newOrder = new Order(title, desc, price);
+      string date = "some date";
+      Order newOrder = new Order(title, desc, price, date);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Test1";
       string venDesc = "testdesc1";
@@ -84,6 +85,16 @@ namespace PierresVendors.Tests
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void ClearAll_ClearsAllVendorsFromList_VendorList()
+    {
+      string name1 = "Test1";
+      Vendor newVendor1 = new Vendor(name1, "testdesc1");
+      List<Vendor> expected = new List<Vendor> { };
+      Vendor.ClearAll();
+      CollectionAssert.AreEqual(expected, Vendor.GetAll());
     }
   }
 }
