@@ -62,13 +62,23 @@ namespace PierresVendors.Tests
       CollectionAssert.AreEqual(newList, result);
     }
         [TestMethod]
-    public void ClearAll_ClearsAllVendorsFromList_VendorList()
+    public void ClearAll_ClearsAllOrdersFromList_OrderList()
     {
       Order newOrder1 = new Order("buns", "bread product", 4, "some year");
       List<Order> expected = new List<Order> { };
       Order.ClearAll();
       CollectionAssert.AreEqual(expected, Order.GetAll());
     }
-    
+
+        [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string title1 = "Test1";
+      string title2 = "Test2";
+      Order newOrder1 = new Order(title1, "bread product", 4, "some year");
+      Order newOrder2 = new Order(title2, "pastry", 3, "another year");
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
