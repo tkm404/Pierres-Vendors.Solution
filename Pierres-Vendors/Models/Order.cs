@@ -12,24 +12,14 @@ namespace PierresVendors.Models
     public int Id { get; }
     private static DateTime _timeline { get; set; } = new DateTime();
     private static List<Order> _instances = new List<Order> { };
-    public Order(string title, string desc, int price)
+    public Order(string title, string desc, int price, string date)
     {
       Title = title;
       Description = desc;
       Price = $"${price}";
-      Date = _timeline.ToString();
+      Date = date;
       _instances.Add(this);
       Id = _instances.Count;
-    }
-    public Order()
-    {
-      Date = _timeline.ToString();
-    }
-
-    public DateTime PurchaseDate(int year, int month, int day)
-    {
-      _timeline = new DateTime(year, month, day);
-      return _timeline;
     }
 
     public static List<Order> GetAll()
