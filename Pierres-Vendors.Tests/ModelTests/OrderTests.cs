@@ -69,5 +69,6 @@ namespace PierresVendors.Tests
       Order.ClearAll();
       CollectionAssert.AreEqual(expected, Order.GetAll());
     }
+    
   }
 }
